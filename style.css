@@ -64,36 +64,7 @@ h2 {
 }
 
 /* CONTENT */
-#top {
-  display: inline-block;
-  margin: 0px;
-  background: #FFFFFF;
-  background-image: url("img/001.jpg");
-  background-size: cover;
-  background-position: right center;
-  color: #000000;
-  padding: 20px 0px;
-  position: relative;
-  vertical-align: top;
-  width: 100%;
-  height-min: 200px;
-  height-max: 400px;
-  background-color: hsla(0,0%,100%,0.50);
-  background-blend-mode: overlay;
-  background-repeat: no-repeat;
-}
 
-#about {
-  display: inline-block;
-  margin: 0px;
-  background: #F0F0F0;
-  color: #000000;
-  padding: 20px 0px;
-  position: relative;
-  text-align: center;
-  vertical-align: top;
-  width: 100%;
-}
 
 #Box {
   background: #FFFFFF;
@@ -101,13 +72,10 @@ h2 {
   border-style: solid;
   border-color: #F0F0F0;
   border-width: 7px;
-  border-radius: 25px;
+  border-radius: 30px;
   padding: 20px;
 }
 
-#footer p {
-  font-size: 13px;
-}
 
 /* IMAGE EFFECTS */
 #circle {
