@@ -1,0 +1,77 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_HOST} ^hirokonishimura\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.hirokonishimura\.com$
+RewriteRule .* https://hirokonishimura.com%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{HTTPS} =on
+RewriteCond %{HTTP_HOST} ^www\.hirokonishimura\.com$
+RewriteRule .* https://hirokonishimura.com%{REQUEST_URI} [R=301,L]
+
+<IfModule mod_suphp.c>
+#suPHP_ConfigPath /home/USER/public_html
+</IfModule>
+
+Options +FollowSymLinks
+Options +Indexes
+RewriteEngine on
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+deny from 46.105.57.180
+deny from 94.242.237.133
+deny from 218.10.17.107
+deny from 218.10.17.94
+deny from 218.10.17.208
+deny from 218.10.17.158
+deny from 218.10.17.148
+deny from 60.173.11.228
+deny from 60.173.11.197
+deny from 112.123.168.50/31
+deny from 112.123.168.52/30
+deny from 112.123.168.56/29
+deny from 112.123.168.64/26
+deny from 112.123.168.128/27
+deny from 112.123.168.160/32
+deny from 218.10.17.2
+deny from 60.173.9.50
+deny from 60.173.9.230
+deny from 112.101.64.176
+deny from 60.173.11.140/30
+deny from 60.173.11.144/28
+deny from 60.173.11.160/27
+deny from 60.173.11.192/27
+deny from 60.173.11.224/28
+deny from 60.173.11.240/29
+deny from 60.173.11.248/31
+deny from 60.173.11.250/32
+
+deny from 112.101.64.249
+deny from 60.173.10.140/30
+deny from 60.173.10.144/28
+deny from 60.173.10.160/27
+deny from 60.173.10.192/27
+deny from 60.173.10.224/28
+deny from 60.173.10.240/29
+deny from 60.173.10.248/31
+deny from 60.173.10.250/32
+
+
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
